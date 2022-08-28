@@ -27,9 +27,9 @@ public class Main {
         List<Person> workSheep = persons.stream().toList();
         persons.stream()
                 .filter(person -> person.getAge() > 18 && person.getAge() < 60 &&
-                        person.getSex() == Sex.WOMAN)
+                        person.getSex() == Sex.WOMAN && person.getEducation() == Education.HIGHER)
                 .filter(person -> person.getAge() > 18 && person.getAge() < 65 &&
-                        person.getSex() == Sex.MAN)
+                        person.getSex() == Sex.MAN && person.getEducation() == Education.HIGHER)
                 .sorted(Comparator.comparing(Person:: getFamily))
                 .collect(Collectors.toList());
     }
